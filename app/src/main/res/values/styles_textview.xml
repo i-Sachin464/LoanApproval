@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text_style_M15_green" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="text_style_R24_black_xxdark" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_xx_large</item>
+        <item name="android:textColor">@color/black_xxdark</item>
+    </style>
+
+    <style name="text_style_M15_xdark" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/black_xdark</item>
+    </style>
+</resources>

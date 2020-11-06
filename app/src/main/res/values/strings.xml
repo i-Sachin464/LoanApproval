@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">LoanApproval</string>
+
+    <string name="hello_">Hello!</string>
+    <string name="welcome_message">Best place to get your loans sanctioned</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_in_underline"><u>Sign in</u></string>
+    <string name="register">Register</string>
+    <string name="register_underline"><u>Register</u></string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="welcome">Welcome</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="hi">Hi!</string>
+    <string name="create">Create a new account</string>
+    <string name="verify">Verify</string>
+    <string name="skip">Skip</string>
+    <string name="home">Home</string>
+    <string name="get_loan">Get Loan</string>
+    <string name="account">Account</string>
+    <string name="click_here">Click here</string>
+    <string name="bank_statement">Bank Statement</string>
+    <string name="are_you">Are You?</string>
+    <string name="salarised">Salarised</string>
+    <string name="self_employed">Self employed</string>
+    <string name="choose">Choose</string>
+    <string name="approved_no_time">Get loans approved in no time.</string>
+    <string name="encrypted">Encrypted</string>
+    <string name="data_safe_with_us">Your data is safe with us.</string>
+    <string name="quick_loans">Quick loans</string>
+    <string name="easy_to_use">Easy to use</string>
+    <string name="its_easy_to_use">Its easy to use.</string>
+    <string name="start">Start</string>
+</resources>
