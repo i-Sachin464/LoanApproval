@@ -51,12 +51,7 @@ class ESignFragment : Fragment() {
 //            val output = FileOutputStream(path)
 //            signView.save(output)
             Toast.makeText(requireContext(), "Send to server", Toast.LENGTH_SHORT).show()
-            startActivity(
-                Intent(requireActivity(), GetLoanActivity::class.java).putExtra(
-                    "to",
-                    "home"
-                )
-            )
+            startActivity(Intent(requireActivity(), GetLoanActivity::class.java).putExtra("goto","home"))
             requireActivity().finish()
         }
     }
