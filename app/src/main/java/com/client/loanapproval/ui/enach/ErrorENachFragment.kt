@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.client.loanapproval.R
-import kotlinx.android.synthetic.main.fragment_perform_kyc.*
+import kotlinx.android.synthetic.main.fragment_error_e_nach.*
+import kotlinx.android.synthetic.main.fragment_perform_kyc.btn_submit
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,8 +44,22 @@ class ErrorENachFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_submit.setOnClickListener {
+            if(checkValidation())
             findNavController().navigate(R.id.action_errorENachFragment_to_thankyouEnachFragment)
         }
+    }
+
+    private fun checkValidation(): Boolean {
+        if(permanent_address.text.isNullOrEmpty()){
+            input_current.error = "Enter current address"
+            return false
+        }
+        if(permanent_address.text.isNullOrEmpty()){
+            input_permanent.error = "Enter Permanent address"
+            return false
+        }
+
+        return true
     }
 
     companion object {

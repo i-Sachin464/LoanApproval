@@ -70,7 +70,7 @@ open class UploadDocumentFragment : Fragment() {
             input_email.error = "Enter Email"
             return false
         }
-        if (phone_no.getText()!!.length <= 10) {
+        if (phone_no.getText()!!.length < 10) {
             input_phone_no.error = "Enter valid Phone number"
             return false
         }

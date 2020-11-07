@@ -1,10 +1,13 @@
 package com.client.loanapproval.ui.registerlogin
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.client.loanapproval.R
 import kotlinx.android.synthetic.main.fragment_register.*
@@ -43,11 +46,31 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         signin.setOnClickListener {
-            if (checkValidation())
-                findNavController().navigate(R.id.action_registerFragment_to_signinFragment)
+            findNavController().navigate(R.id.action_registerFragment_to_signinFragment)
         }
         btn_register.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_verifyFragment)
+            if (checkValidation())
+                findNavController().navigate(R.id.action_registerFragment_to_verifyFragment)
+        }
+        image.setOnClickListener {
+            openFileManager()
+        }
+    }
+
+    private fun openFileManager() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "*/*"
+        intent.addCategory(Intent.CATEGORY_OPENABLE)
+        try {
+            startActivityForResult(
+                Intent.createChooser(intent, "Select a File to Upload"),
+                2
+            )
+        } catch (ex: ActivityNotFoundException) {
+            Toast.makeText(
+                requireContext(), "Please install a File Manager.",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -68,7 +91,7 @@ class RegisterFragment : Fragment() {
             input_phone.error = "Enter Phone number"
             return false
         }
-        if (phone_no.getText().toString().length <= 10) {
+        if (phone_no.getText().toString().length < 11) {
             input_phone.error = "Enter valid Phone number"
             return false
         }
