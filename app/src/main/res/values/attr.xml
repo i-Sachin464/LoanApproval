@@ -3,4 +3,10 @@
     <declare-styleable name="IndicatorLayout">
         <attr name="indicatorCount" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="SignView">
+        <attr name="strokeSize" format="dimension" />
+        <attr name="filterWeight" format="float" />
+    </declare-styleable>
+
 </resources>

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.client.loanapproval.R
-import kotlinx.android.synthetic.main.fragment_register.*
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_signin.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,8 +47,25 @@ class SigninFragment : Fragment() {
             findNavController().navigate(R.id.action_signinFragment_to_registerFragment)
         }
         btn_login.setOnClickListener {
-            findNavController().navigate(R.id.action_signinFragment_to_verifyFragment)
+            if (checkValidation()) {
+                findNavController().navigate(R.id.action_signinFragment_to_verifyFragment)
+            }
         }
+        home.setOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
+
+    private fun checkValidation(): Boolean {
+        if (uid.text.isNullOrEmpty()) {
+            input_uid.error = "Enter a valid username"
+            return false
+        }
+        if (uid.text.isNullOrEmpty()) {
+            input_password.error = "Enter a valid paassword"
+            return false
+        }
+        return true
     }
 
     companion object {

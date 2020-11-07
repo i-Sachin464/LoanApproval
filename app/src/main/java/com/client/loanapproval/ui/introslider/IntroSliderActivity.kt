@@ -1,14 +1,13 @@
 package com.client.loanapproval.ui.introslider
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.client.loanapproval.R
-import com.client.loanapproval.ui.loan.MainActivity
+import com.client.loanapproval.ui.loan.GetLoanActivity
 import kotlinx.android.synthetic.main.activity_introslider.*
 
 class IntroSliderActivity : AppCompatActivity() {
@@ -47,7 +46,7 @@ class IntroSliderActivity : AppCompatActivity() {
             }
         })
         tvSkip.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, GetLoanActivity::class.java))
             finish()
         }
         btn_start.setOnClickListener {
@@ -55,7 +54,7 @@ class IntroSliderActivity : AppCompatActivity() {
            if (position < fragmentList.lastIndex) {
                vpIntroSlider.currentItem = position + 1
            } else {
-               startActivity(Intent(this, MainActivity::class.java))
+               startActivity(Intent(this, GetLoanActivity::class.java))
                finish()
            }
        }

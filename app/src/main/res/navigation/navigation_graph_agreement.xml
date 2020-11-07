@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_agreement"
+    app:startDestination="@id/agreementFragment">
+
+    <fragment
+        android:id="@+id/agreementFragment"
+        android:name="com.client.loanapproval.ui.agreement.AgreementFragment"
+        tools:layout="@layout/fragment_agreement"
+        android:label="fragment_agreement">
+        <action
+            android:id="@+id/action_agreementFragment_to_ESignFragment"
+            app:destination="@id/ESignFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ESignFragment"
+        android:name="com.client.loanapproval.ui.agreement.ESignFragment"
+        tools:layout="@layout/fragment_e_sign"
+        android:label="fragment_e_sign" />
+</navigation>

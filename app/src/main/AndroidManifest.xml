@@ -18,7 +18,11 @@
 
         <activity android:name=".ui.registerlogin.RegisterLoginActivity" />
         <activity android:name=".ui.introslider.IntroSliderActivity" />
-        <activity android:name=".ui.loan.MainActivity" />
+        <activity android:name=".ui.loan.GetLoanActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"/>
+        <activity android:name=".ui.kyc.PerformKYCActivity" />
+        <activity android:name=".ui.enach.ENachActivity" />
+        <activity android:name=".ui.agreement.AgreementActivity" />
     </application>
 
 </manifest>

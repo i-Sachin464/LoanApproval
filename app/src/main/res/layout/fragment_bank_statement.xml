@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.loan.GetLoanFragment">
+    tools:context=".ui.loan.GetLoanFragment"
+    style="@style/padding_same">
 
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome"
+        style="@style/text_style_R32_black_xxdark"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +29,6 @@
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
         app:cardElevation="5dp"
         app:cardMaxElevation="5dp"
         app:cardUseCompatPadding="true"
@@ -37,7 +38,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="20dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_email"
@@ -88,7 +90,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/forgot" />
 
             <TextView
-                android:id="@+id/dummy"
+                android:id="@+id/label_no_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Don't have an account? "
@@ -102,8 +104,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/register_underline"
                 android:textColor="@color/design_default_color_primary_dark"
-                app:layout_constraintLeft_toRightOf="@+id/dummy"
-                app:layout_constraintTop_toTopOf="@id/dummy" />
+                app:layout_constraintLeft_toRightOf="@+id/label_no_account"
+                app:layout_constraintTop_toTopOf="@id/label_no_account" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -144,7 +146,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ly_or" />
 
     <TextView
-        android:id="@+id/dummy2"
+        android:id="@+id/label_other_options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" to choose other options"
@@ -158,7 +160,7 @@
         android:layout_height="wrap_content"
         android:text="@string/click_here"
         android:textColor="@color/design_default_color_primary_dark"
-        app:layout_constraintRight_toLeftOf="@+id/dummy2"
-        app:layout_constraintTop_toTopOf="@id/dummy2" />
+        app:layout_constraintRight_toLeftOf="@+id/label_other_options"
+        app:layout_constraintTop_toTopOf="@id/label_other_options" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

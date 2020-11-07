@@ -32,4 +32,55 @@
     <string name="easy_to_use">Easy to use</string>
     <string name="its_easy_to_use">Its easy to use.</string>
     <string name="start">Start</string>
+    <string name="congratulation">Congratulation</string>
+    <string name="loan_approved">The loan has approved.</string>
+    <string name="thank_you">Thank you !</string>
+    <string name="successfully_completed_the">Successfully completed the</string>
+    <string name="add_your_pan_card">ADD YOUR PAN CARD</string>
+    <string name="choose_from">Choose from document</string>
+    <string name="pdf_format">.pdf format</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="phone">Phone</string>
+    <string name="email">EMAIL</string>
+    <string name="next">Next</string>
+    <string name="loan_amount">Loan amount</string>
+    <string name="purpose_of_loan">Purpose of loan</string>
+    <string name="submit">Submit</string>
+    <string name="enter_pan_no">Enter Pan card number</string>
+    <string name="enter_aadhar_no">Enter aadhar number</string>
+    <string name="add_your_aadhar_card">Enter your aadhar card number</string>
+    <string name="i_agree">I accept all the terms and conditions.</string>
+    <string name="agree">Agree</string>
+
+    <string name="agreement_tnc">Use of this site is provided by Demos subject to the following Terms and Conditions:
+        <p>1. Your use constitutes acceptance of these Terms and Conditions as at the date of your first use of the site.</p>
+        <p>2. Demos reserves the rights to change these Terms and Conditions at any time by posting changes online. Your continued use of this site after changes are posted constitutes your acceptance of this agreement as modified.</p>
+        <p>3. You agree to use this site only for lawful purposes, and in a manner which does not infringe the rights, or restrict, or inhibit the use and enjoyment of the site by any third party.</p>
+        <p>4. This site and the information, names, images, pictures, logos regarding or relating to Demos are provided “as is” without any representation or endorsement made and without warranty of any kind whether express or implied. In no event will Demos be liable for any damages including, without limitation, indirect or consequential damages, or any damages whatsoever arising from the use or in connection with such use or loss of use of the site, whether in contract or in negligence.</p>
+        <p>5. Demos does not warrant that the functions contained in the material contained in this site will be uninterrupted or error free, that defects will be corrected, or that this site or the server that makes it available are free of viruses or bugs or represents the full functionality, accuracy and reliability of the materials.</p>
+        <p>6. Copyright restrictions: please refer to our Creative Commons license terms governing the use of material on this site.</p>
+        <p>7. Demos takes no responsibility for the content of external Internet Sites.</p>
+        <p>8. Any communication or material that you transmit to, or post on, any public area of the site including any data, questions, comments, suggestions, or the like, is, and will be treated as, non-confidential and non-proprietary information.</p>
+        <p>9. If there is any conflict between these Terms and Conditions and rules and/or specific terms of use appearing on this site relating to specific material then the latter shall prevail.</p>
+        <p>10. These terms and conditions shall be governed and construed in accordance with the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the Courts of England and Wales.</p>
+        <p>11. If these Terms and Conditions are not accepted in full, the use of this site must be terminated immediately.</p></string>
+    <string name="please_sign_below">Please sign below</string>
+    <string name="mutual_fund_statement">Mutual fund statement</string>
+    <string name="stock_holding_statement">Stock holding statement</string>
+    <string name="company_last_month_salary_slip">Company last month salary slip</string>
+    <string name="choose_any_one">Any one of the following for document verification</string>
+    <string name="enter_phone_no">Enter your phone number</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="inr">INR</string>
+    <string name="e_nach_statement">The amount will get detected on the sameday as today of every month</string>
+    <string name="cancel">Cancel</string>
+    <string name="okay">Okay</string>
+    <string name="currentaddress">CurrentAddress</string>
+    <string name="present_address">Present Address</string>
+    <string name="sign_in_to_continue">Sign In to continue</string>
+    <string name="please_wait_till_your_loan_get_approved">Please wait till your loan get approved</string>
+    <string-array name="amount_type">
+        <item>K</item>
+        <item>Lacs</item>
+    </string-array>
 </resources>

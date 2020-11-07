@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_e_nach"
+    app:startDestination="@id/performENachFragment">
+
+    <fragment
+        android:id="@+id/errorENachFragment"
+        android:name="com.client.loanapproval.ui.enach.ErrorENachFragment"
+        tools:layout="@layout/fragment_error_e_nach"
+        android:label="fragment_error_e_nach" >
+        <action
+            android:id="@+id/action_errorENachFragment_to_thankyouEnachFragment"
+            app:destination="@id/thankyouEnachFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/performENachFragment"
+        android:name="com.client.loanapproval.ui.enach.PerformENachFragment"
+        tools:layout="@layout/fragment_perform_e_nach"
+        android:label="fragment_perform_e_nach">
+        <action
+            android:id="@+id/action_performENachFragment_to_errorENachFragment"
+            app:destination="@id/errorENachFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thankyouEnachFragment"
+        android:name="com.client.loanapproval.ui.enach.ThankyouEnachFragment"
+        android:label="fragment_thankyou_enach"
+        tools:layout="@layout/fragment_thankyou_enach" />
+</navigation>

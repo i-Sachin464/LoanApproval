@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_kyc"
+    app:startDestination="@id/performKycFragment">
+
+    <fragment
+        android:id="@+id/performKycFragment"
+        android:name="com.client.loanapproval.ui.kyc.PerformKycFragment"
+        android:label="fragment_perform_kyc"
+        tools:layout="@layout/fragment_perform_kyc" >
+        <action
+            android:id="@+id/action_performKycFragment_to_thankyouFragment"
+            app:destination="@id/thankyouFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thankyouFragment"
+        android:name="com.client.loanapproval.ui.kyc.ThankyouFragment"
+        android:label="fragment_thankyou"
+        tools:layout="@layout/fragment_thankyou" />
+</navigation>

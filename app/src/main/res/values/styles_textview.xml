@@ -10,6 +10,12 @@
         <item name="android:textColor">@color/black_xxdark</item>
     </style>
 
+    <style name="text_style_R32_black_xxdark" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_xxxx_large</item>
+        <item name="android:textColor">@color/black_xxdark</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="text_style_M15_xdark" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textColor">@color/black_xdark</item>

@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
+    <TextView
+        android:id="@+id/label_verify"
+        style="@style/text_style_R32_black_xxdark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Verify"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_varify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_verify">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/layout_verify"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
@@ -119,37 +132,34 @@
                     android:maxLength="1"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-        <EditText
-            android:id="@+id/pin_hidden_edittext"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@null"
-            android:cursorVisible="false"
-            android:gravity="center_horizontal"
-            android:inputType="number"
-            android:maxLength="6"
-            android:textColor="#00000000" />
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0:28"
+        app:layout_constraintStart_toStartOf="@+id/cardview_varify"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_varify" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/timer"
-            android:text="0:28"/>
+    <TextView
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Re-send OTP"
+        app:layout_constraintEnd_toEndOf="@id/cardview_varify"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_varify" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/verify"
+        android:textColor="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timer" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_verify"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/verify"
-            android:textColor="@android:color/white"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
-    </LinearLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

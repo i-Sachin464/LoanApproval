@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.client.loanapproval.R
+import kotlinx.android.synthetic.main.fragment_get_loan.*
+import kotlinx.android.synthetic.main.fragment_register.*
+import kotlinx.android.synthetic.main.fragment_register.signin
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +40,16 @@ class GetLoanFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_get_loan, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        salaried.setOnClickListener {
+            findNavController().navigate(R.id.action_getLoanFragment_to_bankStatementFragment)
+        }
+        self_employed.setOnClickListener {
+            findNavController().navigate(R.id.action_getLoanFragment_to_bankStatementFragment)
+        }
     }
 
     companion object {

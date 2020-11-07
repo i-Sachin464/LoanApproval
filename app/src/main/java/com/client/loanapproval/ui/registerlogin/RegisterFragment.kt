@@ -43,11 +43,52 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         signin.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_signinFragment)
+            if (checkValidation())
+                findNavController().navigate(R.id.action_registerFragment_to_signinFragment)
         }
         btn_register.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_verifyFragment)
         }
+    }
+
+    private fun checkValidation(): Boolean {
+        if (first_name.text.isNullOrEmpty()) {
+            input_fname.error = "Enter First name"
+            return false
+        }
+        if (last_name.text.isNullOrEmpty()) {
+            input_lname.error = "Enter Last name"
+            return false
+        }
+        if (username.text.isNullOrEmpty()) {
+            input_username.error = "Enter username"
+            return false
+        }
+        if (phone_no.text.isNullOrEmpty()) {
+            input_phone.error = "Enter Phone number"
+            return false
+        }
+        if (phone_no.getText().toString().length <= 10) {
+            input_phone.error = "Enter valid Phone number"
+            return false
+        }
+        if (email.text.isNullOrEmpty()) {
+            input_email.error = "Please enter email."
+            return false
+        }
+        if (password.text.isNullOrEmpty()) {
+            input_password.error = "Please enter password"
+            return false
+        }
+        if (re_password.text.isNullOrEmpty()) {
+            input_re_password.error = "Please enter re-password."
+            return false
+        }
+        if (password.text.toString() == re_password.text.toString()) {
+            input_re_password.error = "Password didn't match"
+            return false
+        }
+        return true
     }
 
     companion object {

@@ -34,5 +34,8 @@
 
     <dimen name="expanded_card_elevation">5dp</dimen>
 
+    <dimen name="signWidth">5dip</dimen>
+
+
 
 </resources>

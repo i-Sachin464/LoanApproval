@@ -1,11 +1,13 @@
 package com.client.loanapproval.ui.loan
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.client.loanapproval.R
+import kotlinx.android.synthetic.main.fragment_bank_statement.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +38,19 @@ class BankStatementFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bank_statement, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        click_here.setOnClickListener {
+            findNavController().navigate(R.id.action_bankStatementFragment_to_otherStatementFragment)
+        }
+        btn_bank_statement.setOnClickListener {
+            findNavController().navigate(R.id.action_bankStatementFragment_to_upploadDocumentFragment)
+        }
+        btn_login.setOnClickListener {
+            findNavController().navigate(R.id.action_bankStatementFragment_to_upploadDocumentFragment)
+        }
     }
 
     companion object {
