@@ -49,8 +49,21 @@ class BankStatementFragment : Fragment() {
             findNavController().navigate(R.id.action_bankStatementFragment_to_upploadDocumentFragment)
         }
         btn_login.setOnClickListener {
-            findNavController().navigate(R.id.action_bankStatementFragment_to_upploadDocumentFragment)
+            if (checkValidation())
+                findNavController().navigate(R.id.action_bankStatementFragment_to_upploadDocumentFragment)
         }
+    }
+
+    private fun checkValidation(): Boolean {
+        if (email.text.isNullOrEmpty()) {
+            input_email.error = "Enter Email"
+            return false
+        }
+        if (password.text.isNullOrEmpty()) {
+            input_password.error = "Enter password"
+            return false
+        }
+        return true
     }
 
     companion object {

@@ -1,7 +1,5 @@
 package com.client.loanapproval.ui.loan
 
-import android.app.DatePickerDialog
-import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
@@ -12,8 +10,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.client.loanapproval.R
+import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.fragment_upload_document.*
-import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,6 +52,12 @@ open class UploadDocumentFragment : Fragment() {
         day.setOnClickListener {
             requireActivity().showDialog(1)
         }
+        month.setOnClickListener {
+            requireActivity().showDialog(1)
+        }
+        year.setOnClickListener {
+            requireActivity().showDialog(1)
+        }
         btn_next.setOnClickListener {
             if (checkValidation()) {
                 findNavController().navigate(R.id.action_upploadDocumentFragment_to_loanAmountFragment)
@@ -70,7 +74,7 @@ open class UploadDocumentFragment : Fragment() {
             input_email.error = "Enter Email"
             return false
         }
-        if (phone_no.getText()!!.length < 10) {
+        if (phone_no.text!!.length != 10) {
             input_phone_no.error = "Enter valid Phone number"
             return false
         }
@@ -80,7 +84,7 @@ open class UploadDocumentFragment : Fragment() {
 
     private fun openFileManager() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
-        intent.type = "*/*"
+        intent.type = "application/pdf"
         intent.addCategory(Intent.CATEGORY_OPENABLE)
         try {
             startActivityForResult(
@@ -94,27 +98,6 @@ open class UploadDocumentFragment : Fragment() {
             ).show()
         }
     }
-
-    private lateinit var mDatePicker: DatePickerDialog
-    fun onCreateDialog(id: Int): Dialog {
-        mDatePicker = DatePickerDialog(
-            requireContext(),
-            myDateSetListener,
-            Calendar.getInstance().get(Calendar.YEAR),
-            Calendar.getInstance().get(Calendar.MONTH),
-            Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
-        )
-        mDatePicker.datePicker.maxDate = System.currentTimeMillis()
-        return mDatePicker
-    }
-
-    private var myDateSetListener: DatePickerDialog.OnDateSetListener =
-        DatePickerDialog.OnDateSetListener { _, i, j, k ->
-            year.setText(i)
-            month.setText(j)
-            day.setText(k)
-            requireActivity().removeDialog(1)
-        }
 
     companion object {
         /**

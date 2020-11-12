@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.client.loanapproval.R
 import kotlinx.android.synthetic.main.fragment_loan_amount.*
@@ -55,6 +56,12 @@ class LoanAmountFragment : Fragment() {
         }
         if (purpose.text.isNullOrEmpty()) {
             input_purpose.error = "Enter Purpose"
+            return false
+        }
+
+        if (amount.text.toString().toInt() > 35) {
+            Toast.makeText(requireContext(), "You are not eligible for loan", Toast.LENGTH_SHORT)
+                .show()
             return false
         }
 

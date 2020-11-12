@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <item
         android:id="@+id/option_home"
         android:enabled="true"
         android:icon="@drawable/home_non_active"
-        android:title="Home" />
+        android:title="@string/home" />
     <item
         android:id="@+id/option_get_loan"
+        android:checked="true"
         android:enabled="true"
-        android:title="@string/get_loan"
         android:icon="@drawable/get_loan_active"
-        android:checked="true"/>
+        android:title="@string/get_loan" />
     <item
         android:id="@+id/option_account"
         android:enabled="true"
+        android:icon="@drawable/ic_account"
         android:title="@string/account" />
 </menu>

@@ -2,9 +2,13 @@ package com.client.loanapproval.ui.registerlogin
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.client.loanapproval.R
 import com.client.loanapproval.ui.introslider.IntroSliderActivity
@@ -43,10 +47,68 @@ class VerifyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fillCode(pin_first_edittext)
+        fillCode(pin_second_edittext)
+        fillCode(pin_third_edittext)
+        fillCode(pin_forth_edittext)
+        fillCode(pin_fifth_edittext)
+        fillCode(pin_sixth_edittext)
         btn_verify.setOnClickListener {
-            startActivity(Intent(requireActivity(), IntroSliderActivity::class.java))
+            if (pinVerification())
+                startActivity(Intent(requireActivity(), IntroSliderActivity::class.java))
         }
 
+    }
+
+    private fun pinVerification(): Boolean {
+        var pin: String = "123456"
+        if (!(pin_first_edittext.text.isNullOrEmpty() &&
+            pin_second_edittext.text.isNullOrEmpty() &&
+            pin_third_edittext.text.isNullOrEmpty() &&
+            pin_forth_edittext.text.isNullOrEmpty() &&
+            pin_fifth_edittext.text.isNullOrEmpty() &&
+            pin_sixth_edittext.text.isNullOrEmpty())
+        ) {
+            if (pin_first_edittext.text.toString().equals(pin[0] + "", false) &&
+                pin_second_edittext.text.toString().equals(pin[1] + "", false) &&
+                pin_third_edittext.text.toString().equals(pin[2] + "", false) &&
+                pin_forth_edittext.text.toString().equals(pin[3] + "", false) &&
+                pin_fifth_edittext.text.toString().equals(pin[4] + "", false) &&
+                pin_sixth_edittext.text.toString().equals(pin[5] + "", false)
+                    )
+                return true
+        }
+        return false
+    }
+
+    private fun fillCode(editText: EditText) {
+        editText.addTextChangedListener(textWatcher)
+    }
+
+    private val textWatcher = object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            if (pin_first_edittext.text!!.length == 1) {
+                pin_second_edittext.requestFocus()
+            }
+            if (pin_second_edittext.text!!.length == 1) {
+                pin_third_edittext.requestFocus()
+            }
+            if (pin_third_edittext.text!!.length == 1) {
+                pin_forth_edittext.requestFocus()
+            }
+            if (pin_forth_edittext.text!!.length == 1) {
+                pin_fifth_edittext.requestFocus()
+            }
+            if (pin_fifth_edittext.text!!.length == 1) {
+                pin_sixth_edittext.requestFocus()
+            }
+        }
     }
 
     companion object {

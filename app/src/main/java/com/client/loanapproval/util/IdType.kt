@@ -10,5 +10,6 @@ enum class IdType(val text: String) {
     VOTER_CARD("Voter card"),
     PAN_CARD("Pan card"),
     DRIVING_LICENSE("Driving license"),
-    PASSPORT("Passport")
+    PASSPORT("Passport"),
+    EMAIL("email")
 }

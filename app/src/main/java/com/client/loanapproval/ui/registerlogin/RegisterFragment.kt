@@ -1,8 +1,11 @@
 package com.client.loanapproval.ui.registerlogin
 
+import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +13,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.client.loanapproval.R
+import com.client.loanapproval.util.IdType
+import com.client.loanapproval.util.Util
+import kotlinx.android.synthetic.main.fragment_perform_kyc.*
 import kotlinx.android.synthetic.main.fragment_register.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -49,17 +55,26 @@ class RegisterFragment : Fragment() {
             findNavController().navigate(R.id.action_registerFragment_to_signinFragment)
         }
         btn_register.setOnClickListener {
-            if (checkValidation())
+            if (checkValidation()) {
+                sendData()
                 findNavController().navigate(R.id.action_registerFragment_to_verifyFragment)
+            }
+        }
+        home.setOnClickListener {
+            findNavController().popBackStack(R.id.welcomeFragment, false)
         }
         image.setOnClickListener {
             openFileManager()
         }
     }
 
+    private fun sendData() {
+
+    }
+
     private fun openFileManager() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
-        intent.type = "*/*"
+        intent.type = "image/*"
         intent.addCategory(Intent.CATEGORY_OPENABLE)
         try {
             startActivityForResult(
@@ -71,6 +86,33 @@ class RegisterFragment : Fragment() {
                 requireContext(), "Please install a File Manager.",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when (requestCode) {
+            2 -> {
+                if (resultCode == Activity.RESULT_OK) {
+                    if (data != null) {
+                        try {
+                            val inputStream =
+                                requireActivity().contentResolver.openInputStream(data.data!!)
+                            val bitMap = BitmapFactory.decodeStream(inputStream)
+                            image.setImageBitmap(bitMap)
+                            // TODO Save image URI to database
+                        } catch (e: Exception) {
+                            Toast.makeText(
+                                requireContext(),
+                                "Can't set background.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    } else {
+                        Log.v("RegisterFragment", "data is null")
+                    }
+                }
+            }
         }
     }
 
@@ -91,12 +133,17 @@ class RegisterFragment : Fragment() {
             input_phone.error = "Enter Phone number"
             return false
         }
-        if (phone_no.getText().toString().length < 11) {
+        if (phone_no.text.toString().length != 10) {
             input_phone.error = "Enter valid Phone number"
             return false
         }
         if (email.text.isNullOrEmpty()) {
             input_email.error = "Please enter email."
+            return false
+        }
+        var util = Util()
+        if (!util.validateIdCard(IdType.EMAIL.text, email.text.toString())) {
+            input_email.error = "Enter a valid Email"
             return false
         }
         if (password.text.isNullOrEmpty()) {
@@ -107,7 +154,7 @@ class RegisterFragment : Fragment() {
             input_re_password.error = "Please enter re-password."
             return false
         }
-        if (password.text.toString() == re_password.text.toString()) {
+        if (password.text.toString() != re_password.text.toString()) {
             input_re_password.error = "Password didn't match"
             return false
         }

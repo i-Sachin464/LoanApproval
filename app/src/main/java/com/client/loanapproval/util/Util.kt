@@ -1,6 +1,5 @@
 package com.client.loanapproval.util
 
-import android.widget.ProgressBar
 import java.util.regex.Pattern
 
 class Util {
@@ -46,9 +45,12 @@ class Util {
                 val matcher = regexPassport.matcher(card_text)
                 return matcher.matches();
             }
+            IdType.EMAIL.text -> {
+                val regexPassport = Pattern.compile(RegexPatterns.email)
+                val matcher = regexPassport.matcher(card_text)
+                return matcher.matches();
+            }
         }
         return false
     }
-
-
 }

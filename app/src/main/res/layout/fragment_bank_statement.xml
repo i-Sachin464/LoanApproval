@@ -2,17 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/padding_same"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.loan.GetLoanFragment"
-    style="@style/padding_same">
+    tools:context=".ui.loan.GetLoanFragment">
 
     <TextView
         android:id="@+id/welcome"
+        style="@style/text_style_R32_black_xxdark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome"
-        style="@style/text_style_R32_black_xxdark"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,6 +21,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="LogIn to your PERFIOS account"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
@@ -52,7 +53,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -66,7 +68,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -135,6 +138,7 @@
             android:layout_marginLeft="@dimen/space_large"
             android:background="#000" />
     </LinearLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_bank_statement"
         android:layout_width="wrap_content"

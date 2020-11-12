@@ -79,6 +79,7 @@
     <string name="present_address">Present Address</string>
     <string name="sign_in_to_continue">Sign In to continue</string>
     <string name="please_wait_till_your_loan_get_approved">Please wait till your loan get approved</string>
+    <string name="cashabck">CASHABCK</string>
     <string-array name="amount_type">
         <item>K</item>
         <item>Lacs</item>
